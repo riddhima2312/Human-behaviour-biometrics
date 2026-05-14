@@ -107,5 +107,5 @@ This project is licensed under the MIT License.
 
 Riddhima Gupta
 
-* GitHub: https://github.com/your-username
-* LinkedIn: https://linkedin.com/in/your-linkedin
+* GitHub: https://github.com/riddhima2312
+* LinkedIn:[[ https://linkedin.com/in/your-linkedin](https://www.linkedin.com/in/riddhima-gupta-836124339/)](https://www.linkedin.com/in/riddhima-gupta-836124339/)
