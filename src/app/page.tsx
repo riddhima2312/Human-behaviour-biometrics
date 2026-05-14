@@ -11,6 +11,7 @@ import { KeystrokePoint } from "@/types/keystroke";
 
 const MAX_SAMPLES = 100;
 const CHARS_PER_WORD = 5;
+const SECONDS_PER_MINUTE = 60;
 
 const ThemeToggle = dynamic(
   () => import("@/components/theme-toggle").then((module) => module.ThemeToggle),
@@ -70,7 +71,8 @@ export default function Home() {
     const startTime = typingStartRef.current ?? now;
     const elapsedSeconds = Math.max((now - startTime) / 1000, 1);
     const speedWpm =
-      (event.currentTarget.value.length / CHARS_PER_WORD / elapsedSeconds) * 60;
+      (event.currentTarget.value.length / CHARS_PER_WORD / elapsedSeconds) *
+      SECONDS_PER_MINUTE;
 
     const nextPoint: KeystrokePoint = {
       id: points.length + 1,

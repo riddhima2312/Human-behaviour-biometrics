@@ -11,10 +11,6 @@ const applyTheme = (nextIsDark: boolean) => {
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-
     const savedTheme = window.localStorage.getItem(STORAGE_KEY);
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 

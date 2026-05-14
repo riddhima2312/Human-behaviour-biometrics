@@ -11,7 +11,7 @@ const average = (values: number[]) => {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 };
 
-const withWarmupTrim = (values: number[], warmupCount: number) => {
+const trimWarmupSamples = (values: number[], warmupCount: number) => {
   if (values.length <= warmupCount) {
     return values;
   }
@@ -62,7 +62,7 @@ export const buildSummary = (
 
   const dwellSeries = points.map((point) => point.dwellTime);
   const flightSeries = points.map((point) => point.flightTime);
-  const speedSeries = withWarmupTrim(
+  const speedSeries = trimWarmupSamples(
     points.map((point) => point.speedWpm),
     2,
   );
@@ -93,7 +93,7 @@ export const buildSummary = (
   const baselineDwell = average(baseline.map((point) => point.dwellTime));
   const baselineFlight = average(baseline.map((point) => point.flightTime));
   const baselineSpeed = average(
-    withWarmupTrim(
+    trimWarmupSamples(
       baseline.map((point) => point.speedWpm),
       2,
     ),
@@ -102,7 +102,7 @@ export const buildSummary = (
   const currentDwell = average(current.map((point) => point.dwellTime));
   const currentFlight = average(current.map((point) => point.flightTime));
   const currentSpeed = average(
-    withWarmupTrim(
+    trimWarmupSamples(
       current.map((point) => point.speedWpm),
       1,
     ),
