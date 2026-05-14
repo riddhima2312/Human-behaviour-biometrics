@@ -1,105 +1,129 @@
-# 🧠 Human Behaviour Biometrics
+# 🧠 Human Behaviour Biometrics  
+### 🚀 AI-powered Keystroke Dynamics Authentication System
 
-AI-powered behavioral biometrics system that analyzes typing patterns and keystroke dynamics for secure authentication and anomaly detection in real time.
+<p align="center">
+  <img src="https://dummyimage.com/1200x400/0f172a/ffffff&text=Human+Behaviour+Biometrics" />
+</p>
 
 ---
 
-## 🚀 Features
+## 🌟 About the Project
 
-* ⌨️ Real-time keystroke dynamics analysis
-* 📊 Interactive typing analytics dashboard
-* ⚡ Dwell Time & Flight Time tracking
-* 🔐 Behavioral authentication system
-* 📈 Live charts using Recharts
-* 🌙 Modern responsive UI with dark mode
-* 🧠 AI-based anomaly detection concepts
-* 📱 Fully responsive design
+**Human Behaviour Biometrics** is an AI-inspired authentication system that identifies users based on their **typing behavior patterns** instead of traditional passwords.
+
+It creates a **unique behavioral fingerprint** using how a user types.
+
+👉 This project focuses on:
+- ⌨️ Keystroke dynamics analysis  
+- ⚡ Dwell time & Flight time tracking  
+- 📊 Typing rhythm visualization  
+- 🧠 Behavioral pattern recognition  
+- 🔐 AI-based authentication concept  
+
+---
+
+## 🔥 Key Features
+
+- ⚡ Real-time keystroke tracking system  
+- 📊 Interactive analytics dashboard  
+- 🔐 Behavioral authentication concept  
+- 📈 Live charts using Recharts  
+- 🌙 Dark / Light mode support  
+- 📱 Fully responsive UI design  
+- 🧠 Anomaly detection logic (AI concept)  
+- 🚀 Optimized Next.js architecture  
+
+---
+
+## 🧠 How It Works
+
+
+User Input → Keystroke Capture → Feature Extraction → Pattern Analysis → Identity Verification
+
+
+### 📌 Captured Metrics:
+- **Dwell Time** → Time a key is held down  
+- **Flight Time** → Time between key transitions  
+- **Typing Speed** → Characters per second  
+- **Typing Rhythm** → Behavioral consistency pattern  
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** Next.js, React.js, TypeScript
-* **Styling:** Tailwind CSS
-* **Charts & Visualization:** Recharts
-* **State Management:** React Hooks
-* **Authentication Concepts:** Behavioral Biometrics
-* **Deployment:** Vercel
+<p>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript" />
+  <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/Recharts-FF6B00?style=for-the-badge" />
+</p>
 
 ---
 
-## 🧩 How It Works
+## 🚀 Live Demo
 
-The system captures typing behavior data such as:
-
-* Dwell Time → Time a key is pressed
-* Flight Time → Delay between key presses
-* Typing Speed
-* Typing Rhythm
-
-These behavioral patterns are analyzed to create a unique biometric profile for each user.
+🌐 **Project Link:** https://human-behaviour-biometrics.vercel.app  
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Getting Started
 
+### 1️⃣ Clone the repository
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/human-behaviour-biometrics.git
-
-# Navigate into the project
-cd human-behaviour-biometrics
-
-# Install dependencies
+git clone https://github.com/riddhima2312/Human-behaviour-biometrics.git
+cd Human-behaviour-biometrics
+2️⃣ Install dependencies
 npm install
-
-# Run the development server
+3️⃣ Run development server
 npm run dev
-```
-
----
-
-## 📂 Project Structure
-
-```bash
+4️⃣ Open in browser
+http://localhost:3000
+📁 Project Structure
 src/
  ├── app/
  ├── components/
- ├── charts/
- ├── utils/
  ├── hooks/
+ ├── utils/
+ ├── charts/
  └── styles/
-```
+🚀 Future Enhancements
+🤖 Machine Learning model integration
+🧑 Multi-user authentication system
+📂 Database integration (MongoDB / Firebase)
+📊 Advanced anomaly detection system
+📄 Export analytics reports (PDF / CSV)
+🔐 Real-world authentication deployment
+🤝 Contributing
 
----
+We ❤️ contributions!
 
-## 🎯 Future Improvements
+Steps to contribute:
+1. Fork the repository  
+2. Create a new branch  
+3. Make your changes  
+4. Commit changes  
+5. Push and open a Pull Request  
+🌟 Project Stats
 
-* Machine Learning integration
-* User profile comparison
-* Advanced anomaly detection
-* Multi-user authentication
-* Database integration
-* Export analytics reports
 
----
 
-## 🤝 Contributing
 
-Contributions are welcome!
-Feel free to fork this repository and submit pull requests.
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-## 👩‍💻 Author
+👩‍💻 Author
 
 Riddhima Gupta
 
-* GitHub: https://github.com/riddhima2312
-* LinkedIn:[[ https://linkedin.com/in/your-linkedin](https://www.linkedin.com/in/riddhima-gupta-836124339/)](https://www.linkedin.com/in/riddhima-gupta-836124339/)
+🔗 GitHub: https://github.com/riddhima2312
+🔗 LinkedIn: https://www.linkedin.com/in/riddhima-gupta-836124339
+📜 License
+
+This project is licensed under the MIT License.
+
+⭐ Support
+
+If you like this project:
+
+⭐ Star the repository
+🍴 Fork it
+🚀 Share it with others
+<p align="center"> Made with ❤️ by Riddhima Gupta </p> ```
