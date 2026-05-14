@@ -11,6 +11,14 @@ const average = (values: number[]) => {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 };
 
+const withWarmupTrim = (values: number[], warmup: number) => {
+  if (values.length <= warmup) {
+    return values;
+  }
+
+  return values.slice(warmup);
+};
+
 const standardDeviation = (values: number[]) => {
   if (values.length <= 1) {
     return 0;
@@ -54,7 +62,10 @@ export const buildSummary = (
 
   const dwellSeries = points.map((point) => point.dwellTime);
   const flightSeries = points.map((point) => point.flightTime);
-  const speedSeries = points.map((point) => point.speedWpm);
+  const speedSeries = withWarmupTrim(
+    points.map((point) => point.speedWpm),
+    2,
+  );
 
   const averageDwell = average(dwellSeries);
   const averageFlight = average(flightSeries);
@@ -81,11 +92,21 @@ export const buildSummary = (
 
   const baselineDwell = average(baseline.map((point) => point.dwellTime));
   const baselineFlight = average(baseline.map((point) => point.flightTime));
-  const baselineSpeed = average(baseline.map((point) => point.speedWpm));
+  const baselineSpeed = average(
+    withWarmupTrim(
+      baseline.map((point) => point.speedWpm),
+      2,
+    ),
+  );
 
   const currentDwell = average(current.map((point) => point.dwellTime));
   const currentFlight = average(current.map((point) => point.flightTime));
-  const currentSpeed = average(current.map((point) => point.speedWpm));
+  const currentSpeed = average(
+    withWarmupTrim(
+      current.map((point) => point.speedWpm),
+      1,
+    ),
+  );
 
   const dwellDelta = Math.abs(currentDwell - baselineDwell) / Math.max(baselineDwell, 1);
   const flightDelta =
