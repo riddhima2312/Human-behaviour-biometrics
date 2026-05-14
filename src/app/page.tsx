@@ -29,11 +29,24 @@ export default function Home() {
   const [points, setPoints] = useState<KeystrokePoint[]>([]);
   const downRef = useRef<Record<string, number>>({});
   const lastUpTimeRef = useRef<number | null>(null);
+  const typingStartRef = useRef<number | null>(null);
 
   const summary = useMemo(() => buildSummary(points), [points]);
 
+  const handleTextChange = (value: string) => {
+    setText(value);
+
+    if (!value.trim()) {
+      typingStartRef.current = null;
+      lastUpTimeRef.current = null;
+    }
+  };
+
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (!event.repeat) {
+      if (typingStartRef.current === null) {
+        typingStartRef.current = performance.now();
+      }
       downRef.current[event.key] = performance.now();
     }
   };
@@ -48,7 +61,8 @@ export default function Home() {
 
     const dwellTime = now - downTime;
     const flightTime = lastUpTimeRef.current ? now - lastUpTimeRef.current : 0;
-    const elapsedSeconds = Math.max(now / 1000, 1);
+    const startTime = typingStartRef.current ?? now;
+    const elapsedSeconds = Math.max((now - startTime) / 1000, 1);
     const speedWpm = (event.currentTarget.value.length / 5 / elapsedSeconds) * 60;
 
     const nextPoint: KeystrokePoint = {
@@ -86,7 +100,7 @@ export default function Home() {
         <div className="lg:col-span-3">
           <TypingPanel
             value={text}
-            onChange={setText}
+            onChange={handleTextChange}
             onKeyDown={handleKeyDown}
             onKeyUp={handleKeyUp}
           />

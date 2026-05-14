@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "hbb-theme";
 
+const applyTheme = (nextIsDark: boolean) => {
+  document.documentElement.classList.toggle("dark", nextIsDark);
+  window.localStorage.setItem(STORAGE_KEY, nextIsDark ? "dark" : "light");
+};
+
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window === "undefined") {
@@ -17,15 +22,13 @@ export function ThemeToggle() {
   });
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-    window.localStorage.setItem(STORAGE_KEY, isDark ? "dark" : "light");
+    applyTheme(isDark);
   }, [isDark]);
 
   const toggleTheme = () => {
     setIsDark((previous) => {
       const next = !previous;
-      document.documentElement.classList.toggle("dark", next);
-      window.localStorage.setItem(STORAGE_KEY, next ? "dark" : "light");
+      applyTheme(next);
       return next;
     });
   };

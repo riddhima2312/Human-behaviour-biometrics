@@ -18,7 +18,8 @@ const standardDeviation = (values: number[]) => {
 
   const mean = average(values);
   const variance =
-    values.reduce((sum, value) => sum + (value - mean) ** 2, 0) / values.length;
+    values.reduce((sum, value) => sum + (value - mean) ** 2, 0) /
+    (values.length - 1);
 
   return Math.sqrt(variance);
 };

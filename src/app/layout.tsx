@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Human Behaviour Biometrics",
+  title: "Human Behavior Biometrics",
   description:
     "AI-powered behavioral biometrics dashboard with real-time keystroke dynamics and anomaly detection.",
 };
