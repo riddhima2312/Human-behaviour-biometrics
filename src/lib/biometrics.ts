@@ -11,12 +11,12 @@ const average = (values: number[]) => {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 };
 
-const withWarmupTrim = (values: number[], warmup: number) => {
-  if (values.length <= warmup) {
+const withWarmupTrim = (values: number[], warmupCount: number) => {
+  if (values.length <= warmupCount) {
     return values;
   }
 
-  return values.slice(warmup);
+  return values.slice(warmupCount);
 };
 
 const standardDeviation = (values: number[]) => {

@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 
 import { AuthAnalysis } from "@/components/auth-analysis";
 import { MetricsOverview } from "@/components/metrics-overview";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { TypingPanel } from "@/components/typing-panel";
 import { buildSummary } from "@/lib/biometrics";
 import { KeystrokePoint } from "@/types/keystroke";
@@ -13,6 +12,12 @@ import { KeystrokePoint } from "@/types/keystroke";
 const MAX_SAMPLES = 100;
 const CHARS_PER_WORD = 5;
 
+const ThemeToggle = dynamic(
+  () => import("@/components/theme-toggle").then((module) => module.ThemeToggle),
+  { ssr: false },
+);
+
+// Recharts depends on browser layout APIs, so this chart is client-only.
 const KeystrokeChart = dynamic(
   () => import("@/components/charts/keystroke-chart").then((module) => module.KeystrokeChart),
   {
