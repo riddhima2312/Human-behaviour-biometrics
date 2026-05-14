@@ -28,12 +28,6 @@ AI-powered behavioral biometrics system that analyzes typing patterns and keystr
 
 ---
 
-## 📷 Preview
-
-<img width="100%" alt="Project Preview" src="https://via.placeholder.com/1200x600.png?text=Human+Behaviour+Biometrics"/>
-
----
-
 ## 🧩 How It Works
 
 The system captures typing behavior data such as:
