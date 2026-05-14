@@ -11,6 +11,7 @@ import { buildSummary } from "@/lib/biometrics";
 import { KeystrokePoint } from "@/types/keystroke";
 
 const MAX_SAMPLES = 100;
+const CHARS_PER_WORD = 5;
 
 const KeystrokeChart = dynamic(
   () => import("@/components/charts/keystroke-chart").then((module) => module.KeystrokeChart),
@@ -63,7 +64,8 @@ export default function Home() {
     const flightTime = lastUpTimeRef.current ? now - lastUpTimeRef.current : 0;
     const startTime = typingStartRef.current ?? now;
     const elapsedSeconds = Math.max((now - startTime) / 1000, 1);
-    const speedWpm = (event.currentTarget.value.length / 5 / elapsedSeconds) * 60;
+    const speedWpm =
+      (event.currentTarget.value.length / CHARS_PER_WORD / elapsedSeconds) * 60;
 
     const nextPoint: KeystrokePoint = {
       id: points.length + 1,

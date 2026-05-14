@@ -12,7 +12,7 @@ const average = (values: number[]) => {
 };
 
 const standardDeviation = (values: number[]) => {
-  if (values.length < 2) {
+  if (values.length <= 1) {
     return 0;
   }
 

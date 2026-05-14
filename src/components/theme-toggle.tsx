@@ -28,7 +28,6 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     setIsDark((previous) => {
       const next = !previous;
-      applyTheme(next);
       return next;
     });
   };
